@@ -35,16 +35,17 @@ struct WelcomeView: View {
                 .foregroundColor(.secondary)
                 .padding(.bottom, 20)
             
-            Button("Let's Go! 🐶") {
-                
+            NavigationLink {
+                HomeView()
+            } label: {
+                Text("Let's Go! 🐶")
+                .bold()
+                .frame(width: 200)
+                .foregroundColor(.white)
+                .padding(15)
+                .background(Color.accent)
+                .cornerRadius(5)
             }
-            .bold()
-            .frame(width: 200)
-            .foregroundColor(.white)
-            .padding(15)
-            .background(Color.accent)
-            .cornerRadius(5)
-            
             Spacer()
         }
         .multilineTextAlignment(.center)

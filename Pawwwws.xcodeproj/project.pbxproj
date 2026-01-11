@@ -6,13 +6,33 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		86EA2BD22F14271800A245A4 /* Secrets.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 86EA2BD12F14271800A245A4 /* Secrets.xcconfig */; };
+		86EA2BF12F1427A900A245A4 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 86EA2BF02F1427A400A245A4 /* .gitignore */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		86EA2B4A2F1401B700A245A4 /* Pawwwws.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pawwwws.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		86EA2BD12F14271800A245A4 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
+		86EA2BF02F1427A400A245A4 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		86EA2BD42F14273200A245A4 /* Exceptions for "Pawwwws" folder in "Pawwwws" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 86EA2B492F1401B700A245A4 /* Pawwwws */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		86EA2B4C2F1401B700A245A4 /* Pawwwws */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				86EA2BD42F14273200A245A4 /* Exceptions for "Pawwwws" folder in "Pawwwws" target */,
+			);
 			path = Pawwwws;
 			sourceTree = "<group>";
 		};
@@ -32,6 +52,8 @@
 		86EA2B412F1401B700A245A4 = {
 			isa = PBXGroup;
 			children = (
+				86EA2BF02F1427A400A245A4 /* .gitignore */,
+				86EA2BD12F14271800A245A4 /* Secrets.xcconfig */,
 				86EA2B4C2F1401B700A245A4 /* Pawwwws */,
 				86EA2B4B2F1401B700A245A4 /* Products */,
 			);
@@ -109,6 +131,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86EA2BD22F14271800A245A4 /* Secrets.xcconfig in Resources */,
+				86EA2BF12F1427A900A245A4 /* .gitignore in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,6 +151,7 @@
 /* Begin XCBuildConfiguration section */
 		86EA2B532F1401B700A245A4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86EA2BD12F14271800A245A4 /* Secrets.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -190,6 +215,7 @@
 		};
 		86EA2B542F1401B700A245A4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86EA2BD12F14271800A245A4 /* Secrets.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -246,6 +272,7 @@
 		};
 		86EA2B562F1401B700A245A4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86EA2BD12F14271800A245A4 /* Secrets.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -253,6 +280,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Pawwwws/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -277,6 +305,7 @@
 		};
 		86EA2B572F1401B700A245A4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86EA2BD12F14271800A245A4 /* Secrets.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -284,6 +313,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Pawwwws/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct PawwwwsApp: App {
+    @StateObject var dogsViewModel: DogsViewModel = DogsViewModel()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack {
+                ContentView()
+            }
+            .navigationViewStyle(StackNavigationViewStyle())
+            .environmentObject(dogsViewModel)
         }
     }
 }
