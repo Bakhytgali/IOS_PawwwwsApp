@@ -8,40 +8,25 @@
 import Foundation
 
 struct BreedModel: Codable {
+    let weight, height: BreedMetrics
     let id: String
     let name: String
-    let speciesID: String?
-    
-    let lifeSpan: String
+    let bredFor: String?
+    let breedGroup: String?
+    let lifeSpan: String?
     let temperament: String?
     let origin: String?
-    
-    let description: String?
-    let history: String?
-    
-    let bredFor: String?
-    let perfectFor: String?
-    let breedGroup: String?
-    
-    let countryCodes: String?
-    let countryCode: String?
-    
     let referenceImageID: String?
-    
-    let weight: BreedMetrics
-    let height: BreedMetrics
     let image: BreedImage?
-
+    
     enum CodingKeys: String, CodingKey {
-        case id, name, temperament, origin, description, history, weight, height, image
-        case speciesID = "species_id"
-        case lifeSpan = "life_span"
+        case weight, height, id, name
         case bredFor = "bred_for"
-        case perfectFor = "perfect_for"
         case breedGroup = "breed_group"
-        case countryCodes = "country_codes"
-        case countryCode = "country_code"
+        case lifeSpan = "life_span"
+        case temperament, origin
         case referenceImageID = "reference_image_id"
+        case image
     }
 }
 

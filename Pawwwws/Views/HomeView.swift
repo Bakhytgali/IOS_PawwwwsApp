@@ -14,14 +14,17 @@ struct HomeView: View {
         VStack {
             if dogsViewModel.isLoading {
                 ProgressView()
-            } else if let data = dogsViewModel.data {
-                Text(dogsViewModel.data?.name ?? "NOOOOTHING!")
+            } else if let data = dogsViewModel.dogBreeds {
+                ForEach(dogsViewModel.dawgsOfTheWeek) { dawg in
+                    Text(dawg.fact)
+                }
             } else {
                 Text("No data")
             }
         }
         .task {
-            await dogsViewModel.getABreed()
+            await dogsViewModel.getAllDogs()
+            dogsViewModel.getTheDawgsOfTheWeek()
         }
     }
 }

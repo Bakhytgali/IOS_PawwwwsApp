@@ -12,8 +12,8 @@ class DogsAPIManager {
     let apiKey: String = Bundle.main.object(forInfoDictionaryKey: "API_KEY") as? String ?? "lol"
     let baseUrl: String = "https://api.thedogapi.com/v1"
     
-    func getBreedData(breedId: Int = 1) async throws -> BreedModel? {
-        guard let url = URL(string: "\(baseUrl)/breeds/\(breedId)") else {fatalError("Invalid URL")}
+    func getAllBreeds() async throws -> [BreedModel]? {
+        guard let url = URL(string: "\(baseUrl)/breeds") else {fatalError("Invalid URL")}
         
         var urlRequest = URLRequest(url: url)
         
@@ -27,18 +27,13 @@ class DogsAPIManager {
                 print(apiKey)
                 print(url)
                 print("Response:", String(data: data, encoding: .utf8) ?? "No body")
-                fatalError("Error fetching a dog breed!")
+                fatalError("Error fetching a dog breeds!")
             }
         }
         
-        let dogModel = try JSONDecoder().decode(BreedModel.self, from: data)
-        print(dogModel)
-        return dogModel
+        let dogs = try JSONDecoder().decode([BreedModel].self, from: data)
+        print(dogs)
+        
+        return dogs
     }
-    
-//    func getNumberOfDogs(of number: Int) -> [BreedModel] {
-//        guard let url = URL(string: "\(baseUrl)&api_key=\(apiKey)") else {fatalError("Invalid URL")}
-//        
-//        
-//    }
 }
