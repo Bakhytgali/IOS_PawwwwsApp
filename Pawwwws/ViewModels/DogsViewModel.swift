@@ -10,8 +10,9 @@ import Combine
 
 @MainActor
 class DogsViewModel: ObservableObject {
-    @Published var data: String? = nil
+    @Published var data: BreedModel? = nil
     @Published var isLoading: Bool = false
+//    @Published var dawgsOfTheWeek =
     
     private let apiManager = DogsAPIManager()
     
@@ -22,7 +23,16 @@ class DogsViewModel: ObservableObject {
             isLoading = false
         } catch {
             isLoading = false
-            data = "Failed to fetch data"
+            print(error)
         }
     }
+    
+//    func getTheDawgsOfTheWeek() async {
+//        isLoading = true
+//        do {
+//        
+//        } catch {
+//            isLoading = false
+//        }
+//    }
 }

@@ -10,12 +10,14 @@ import Combine
 
 class DogsAPIManager {
     let apiKey: String = Bundle.main.object(forInfoDictionaryKey: "API_KEY") as? String ?? "lol"
-    let baseUrl: String = "https://api.thedogapi.com/v1/breeds/1"
+    let baseUrl: String = "https://api.thedogapi.com/v1"
     
-    func getBreedData() async throws -> String? {
-        guard let url = URL(string: "\(baseUrl)&api_key=\(apiKey)") else {fatalError("Invalid URL")}
+    func getBreedData(breedId: Int = 1) async throws -> BreedModel? {
+        guard let url = URL(string: "\(baseUrl)/breeds/\(breedId)") else {fatalError("Invalid URL")}
         
-        let urlRequest = URLRequest(url: url)
+        var urlRequest = URLRequest(url: url)
+        
+        urlRequest.setValue(apiKey, forHTTPHeaderField: "x-api-key")
         
         let (data, response) = try await URLSession.shared.data(for: urlRequest)
         
@@ -25,10 +27,18 @@ class DogsAPIManager {
                 print(apiKey)
                 print(url)
                 print("Response:", String(data: data, encoding: .utf8) ?? "No body")
-                fatalError("Error fetching weather")
+                fatalError("Error fetching a dog breed!")
             }
         }
         
-        return String(data: data, encoding: .utf8)
+        let dogModel = try JSONDecoder().decode(BreedModel.self, from: data)
+        print(dogModel)
+        return dogModel
     }
+    
+//    func getNumberOfDogs(of number: Int) -> [BreedModel] {
+//        guard let url = URL(string: "\(baseUrl)&api_key=\(apiKey)") else {fatalError("Invalid URL")}
+//        
+//        
+//    }
 }

@@ -15,7 +15,7 @@ struct HomeView: View {
             if dogsViewModel.isLoading {
                 ProgressView()
             } else if let data = dogsViewModel.data {
-                Text(data)
+                Text(dogsViewModel.data?.name ?? "NOOOOTHING!")
             } else {
                 Text("No data")
             }
