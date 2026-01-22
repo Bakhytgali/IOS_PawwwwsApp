@@ -15,9 +15,7 @@ struct HomeView: View {
             if dogsViewModel.isLoading {
                 ProgressView()
             } else if let data = dogsViewModel.dogBreeds {
-                ForEach(dogsViewModel.dawgsOfTheWeek) { dawg in
-                    Text(dawg.fact)
-                }
+                DawgsOfTheWeekView()
             } else {
                 Text("No data")
             }
