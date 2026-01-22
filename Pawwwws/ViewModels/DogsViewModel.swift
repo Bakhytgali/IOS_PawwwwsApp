@@ -37,13 +37,17 @@ class DogsViewModel: ObservableObject {
     }
     
     private func createDawgsOfTheWeek() {
+        var tempDawgs: [DawgModel] = []
+        
         if dogBreeds != nil {
             for i in 0..<3 {
                 let dogWithName = DogModel(name: getARandomName(), breed: dogBreeds![i])
                 let dawg = DawgModel(fact: getARandomFact(), dog: dogWithName)
-                dawgsOfTheWeek.append(dawg)
+                tempDawgs.append(dawg)
             }
         }
+        
+        dawgsOfTheWeek = tempDawgs
     }
     
     private func getARandomName() -> String {
