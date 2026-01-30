@@ -17,9 +17,10 @@ struct DawgsOfTheWeekView: View {
                     DawgOfTheWeekCardView(dawg: dawg)
                 }
             }
-            .defaultScrollAnchor(.leading)
-            .frame(maxHeight: 400)
         }
+        .frame(maxHeight: 200)
+        .frame(maxWidth: .infinity, alignment: .top)
+        .padding(10)
         .navigationTitle(Text("Dawgs of the Week"))
         
     }

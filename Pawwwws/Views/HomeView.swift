@@ -11,7 +11,7 @@ struct HomeView: View {
     @EnvironmentObject var dogsViewModel: DogsViewModel
 
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
             if dogsViewModel.isLoading {
                 ProgressView()
             } else if let data = dogsViewModel.dogBreeds {
@@ -19,7 +19,10 @@ struct HomeView: View {
             } else {
                 Text("No data")
             }
+
+            Spacer()
         }
+        .frame(maxHeight: .infinity)
         .task {
             await dogsViewModel.getAllDogs()
             dogsViewModel.getTheDawgsOfTheWeek()

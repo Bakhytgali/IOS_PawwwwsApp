@@ -41,7 +41,8 @@ class DogsViewModel: ObservableObject {
         
         if dogBreeds != nil {
             for i in 0..<3 {
-                let dogWithName = DogModel(name: getARandomName(), breed: dogBreeds![i])
+                let randIndex = Int.random(in: 0..<dogBreeds!.count)
+                let dogWithName = DogModel(name: getARandomName(), breed: dogBreeds![randIndex])
                 let dawg = DawgModel(fact: getARandomFact(), dog: dogWithName)
                 tempDawgs.append(dawg)
             }

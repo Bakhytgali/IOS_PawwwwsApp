@@ -11,26 +11,32 @@ struct DawgOfTheWeekCardView: View {
     var dawg: DawgModel
     
     var body: some View {
-        VStack(alignment: .leading) {
+        HStack(alignment: .center) {
             AsyncImage(url: URL(string: dawg.dog.breed.image?.url ?? "")) { image in
                 image
                     .resizable()
-                    .frame(width: 250, height: 250)
+                    .frame(width: 100, height: 100)
                     .cornerRadius(15)
                 
             } placeholder: {
                 ProgressView()
             }
             
-            Text(dawg.dog.name ?? "Unknown")
-                .font(.title)
+            Spacer()
             
-            Text(dawg.fact)
-                .font(.caption)
-                .frame(alignment: .leading)
+            VStack(alignment: .leading, spacing: 15) {
+                Text(dawg.dog.name ?? "Unknown")
+                    .font(.headline)
+                    .foregroundColor(Color.white)
+                
+                Text(dawg.fact)
+                    .font(.caption)
+                    .frame(alignment: .leading)
+                    .foregroundColor(Color.white)
+            }
         }
         .padding(15)
-        .background(Color.secondaryAccent)
+        .background(Color.accent)
         .cornerRadius(15)
     }
 }
