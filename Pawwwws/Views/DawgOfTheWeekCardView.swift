@@ -31,8 +31,10 @@ struct DawgOfTheWeekCardView: View {
                 
                 Text(dawg.fact)
                     .font(.caption)
-                    .frame(alignment: .leading)
-                    .foregroundColor(Color.white)
+                    .foregroundColor(.white)
+                    .lineLimit(3)
+                    .frame(width: 140)
+                    
             }
         }
         .padding(15)

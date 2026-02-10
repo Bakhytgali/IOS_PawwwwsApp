@@ -17,6 +17,7 @@ struct DawgsOfTheWeekView: View {
                     DawgOfTheWeekCardView(dawg: dawg)
                 }
             }
+            .padding(16)
         }
         .frame(maxHeight: 200)
         .frame(maxWidth: .infinity, alignment: .top)
